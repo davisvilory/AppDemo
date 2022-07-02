@@ -1,0 +1,46 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.vilocorp.appdemo"
+        minSdk 23
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    dataBinding {
+        android.buildFeatures.dataBinding = true
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0'
+
+    implementation "com.microsoft.appcenter:appcenter-analytics:4.3.1"
+    implementation "com.microsoft.appcenter:appcenter-crashes:4.3.1"
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation "com.squareup.okhttp3:okhttp:4.10.0"
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+}
